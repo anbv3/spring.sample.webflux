@@ -5,10 +5,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.reactive.function.server.RouterFunction;
+import spring.sample.webflux.WebfluxTemplateApplication;
+import spring.sample.webflux.configs.ServerConfiguration;
+import spring.sample.webflux.routes.MyRoute;
 
 import static org.junit.Assert.*;
 
@@ -16,10 +22,10 @@ import static org.junit.Assert.*;
 @SpringBootTest
 public class MyHandlerTest {
 
-    @Autowired
-    private WebApplicationContext context;
-
     private WebTestClient client;
+
+    @Autowired
+    private ApplicationContext context;
 
     @Before
     public void setUp() {

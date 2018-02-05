@@ -24,7 +24,7 @@ public class MyWebFilter implements WebFilter {
         return chain.filter(exchange)
                     // [NOTE] https://spring.io/blog/2017/09/28/reactor-bismuth-is-out
                     // Add some data to SubscriberContext to store the data as Thread local
-                    .subscriberContext(context -> context.put("TEST", "TEST"));
+                    .subscriberContext(context -> context.put("TEST", "TEST DATA"));
 
     }
 }

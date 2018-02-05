@@ -20,9 +20,9 @@ public class MyHandler {
 
     public Mono<ServerResponse> handleEcho(ServerRequest request) {
         return Mono.subscriberContext().flatMap(context -> {
-            String testId = context.get("TEST");
+            String contextData = context.get("TEST");
             LOG.info("{}", request);
-            LOG.info("{}", testId);
+            LOG.info("{}", contextData);
             return ServerResponse.ok().body(fromObject(request.pathVariable("path")));
         });
     }
