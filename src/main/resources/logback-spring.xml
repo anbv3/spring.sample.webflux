@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-20thread] %-5level \(%F:%line:%M\) %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!--<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<file>/home/logs/springboot/server.log</file>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<fileNamePattern>/home/logs/springboot//server.log.%d{yyyy-MM-dd}.%i</fileNamePattern>-->
+            <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+                <!--<maxFileSize>100MB</maxFileSize>-->
+            <!--</timeBasedFileNamingAndTriggeringPolicy>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+            <!--<Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-20thread] %-5level \(%F:%line:%M\) %msg%n</Pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+    <!-- Loggers -->
+    <logger name="org.springframework">
+        <level value="info"/>
+    </logger>
+    <logger name="org.springframework.security">
+        <level value="info"/>
+    </logger>
+
+    <!-- db -->
+    <logger name="java.sql">
+        <level value="info"/>
+    </logger>
+    <logger name="org.hibernate">
+        <level value="info"/>
+    </logger>
+
+    <!-- belli -->
+    <logger name="spring.sample">
+        <level value="debug"/>
+    </logger>
+
+    <!-- root -->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="ROLLING"/>-->
+    </root>
+</configuration>

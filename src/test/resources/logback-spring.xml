@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-20thread] %-5level \(%F:%line:%M\) %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- Loggers -->
+    <logger name="org.springframework">
+        <level value="info"/>
+    </logger>
+    <logger name="org.springframework.security">
+        <level value="info"/>
+    </logger>
+
+    <!-- db -->
+    <logger name="java.sql">
+        <level value="info"/>
+    </logger>
+    <logger name="org.hibernate">
+        <level value="info"/>
+    </logger>
+
+    <!-- belli -->
+    <logger name="spring.sample">
+        <level value="debug"/>
+    </logger>
+
+    <!-- root -->
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
