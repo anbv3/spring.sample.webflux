@@ -153,5 +153,21 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>local</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>real</id>
+            <properties>
+                <env>real</env>
+            </properties>
+        </profile>
+    </profiles>
 </project>
